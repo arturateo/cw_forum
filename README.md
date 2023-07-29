@@ -5,7 +5,7 @@
 * Этап №1
   * Создайте папку для проекта 
   * Клонируйте проект в папку с помощью командной строки
-    *       git clone git@github.com:arturateo/ToDoList_V2-Artur_Sheshukov.git
+    *       git clone git@github.com:arturateo/cw_forum.git
 * Этап №2
     * Установите виртуальное окружение 
       *     python -m venv venv 
@@ -21,8 +21,10 @@
     *       python manage.py migrate
   * Выгрузить фикстуры в БД 
     *       python manage.py loaddata fixtures/dump.json
+    *       python manage.py loaddata fixtures/data.json
 
 #### Теперь можно пользоваться приложением
 ```
 Логин/пароль от админ панели: admin
+Логин/пароль от модератора панели: moderator
 ```

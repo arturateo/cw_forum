@@ -11,16 +11,23 @@
         <div class="mt-2 card">
             <div class="card-body">
                 <p class="card-text">{{ topic.description }}</p>
-                <a href="{% url 'topics:update' topic.id %}" class="btn btn-primary">Изменить тему</a>
-                <a href="{% url 'topics:delete' topic.id %}" class="btn btn-danger">Удалить</a>
+                {% if user.is_authenticated %}
+                    {% if perms.topics.change_topics or user == topic.author %}
+                        <a href="{% url 'topics:update' topic.id %}" class="btn btn-primary">Изменить тему</a>
+                    {% endif %}
+                    {% if perms.topics.delete_topics or user == topic.author %}
+                        <a href="{% url 'topics:delete' topic.id %}" class="btn btn-danger">Удалить</a>
+                    {% endif %}
+                {% endif %}
             </div>
         </div>
-
-        <div class="mt-2 card">
-            <div class="card-body">
-                {% include 'partials/form.html' with fields_only=True button_text="Создать" topic_pk=topic.pk %}
+        {% if user.is_authenticated %}
+            <div class="mt-2 card">
+                <div class="card-body">
+                    {% include 'partials/form.html' with fields_only=True button_text="Создать" topic_pk=topic.pk %}
+                </div>
             </div>
-        </div>
+        {% endif %}
 
         {% for comment in comments %}
             {% if comment.topic.id == topic.pk %}
@@ -43,8 +50,15 @@
                             </p>
                         </div>
                     </div>
-                    <a href="{% url 'comments:update' comment.id %}" class="btn btn-primary">Изменить комментарий</a>
-                    <a href="{% url 'comments:delete' comment.id %}" class="btn btn-danger">Удалить</a>
+                    {% if user.is_authenticated %}
+                        {% if perms.comments.change_comments or user == comment.comment_author %}
+                            <a href="{% url 'comments:update' comment.id %}" class="btn btn-primary">Изменить
+                                комментарий</a>
+                        {% endif %}
+                        {% if perms.comments.delete_comments or user == comment.comment_author %}
+                            <a href="{% url 'comments:delete' comment.id %}" class="btn btn-danger">Удалить</a>
+                        {% endif %}
+                    {% endif %}
                 </div>
 
             {% endif %}

@@ -19,17 +19,20 @@
             <ul class="navbar-nav me-right mb-2 mb-lg-0">
                 {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'accounts:logout' %}">Выйти</a>
+                        <a class="nav-link active" aria-current="page"
+                           href="{% url 'accounts:logout' %}?next={{ request.path }}">Выйти</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="{% url 'accounts:profile' user.id %}">Профиль: {{ user }}</a>
                     </li>
                 {% else %}
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'accounts:register' %}">Зарегистрироваться</a>
+                        <a class="nav-link active" aria-current="page"
+                           href="{% url 'accounts:register' %}?next={{ request.path }}">Зарегистрироваться</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'accounts:login' %}">Войти</a>
+                        <a class="nav-link active" aria-current="page"
+                           href="{% url 'accounts:login' %}?next={{ request.path }}">Войти</a>
                     </li>
 
                 {% endif %}

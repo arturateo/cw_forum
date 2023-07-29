@@ -1,5 +1,6 @@
 from urllib.parse import urlencode
 
+from django.contrib.auth.mixins import PermissionRequiredMixin, LoginRequiredMixin
 from django.core.paginator import Paginator
 from django.db.models import Q
 from django.shortcuts import redirect
@@ -49,7 +50,7 @@ class TopicsList(ListView):
         return queryset
 
 
-class TopicCreate(CreateView):
+class TopicCreate(LoginRequiredMixin, CreateView):
     model = Topics
     form_class = TopicsForm
     template_name = 'topics/topic_create.html'
@@ -64,20 +65,28 @@ class TopicCreate(CreateView):
         return reverse("topics:detail", kwargs={"pk": self.object.pk})
 
 
-class TopicUpdate(UpdateView):
+class TopicUpdate(PermissionRequiredMixin, UpdateView):
     model = Topics
     form_class = TopicsForm
     template_name = "topics/topic_edit.html"
+    permission_required = 'topics.change_topics'
+
+    def has_permission(self):
+        return super().has_permission() or self.request.user == self.get_object().author
 
     def get_success_url(self):
         return reverse("topics:detail", kwargs={"pk": self.object.pk})
 
 
-class TopicDelete(DeleteView):
+class TopicDelete(PermissionRequiredMixin, DeleteView):
     model = Topics
     template_name = "topics/topic_delete.html"
     context_object_name = 'topic'
     success_url = reverse_lazy("topics:home")
+    permission_required = 'topics.delete_topics'
+
+    def has_permission(self):
+        return super().has_permission() or self.request.user == self.get_object().author
 
 
 class TopicDetail(DetailView):
