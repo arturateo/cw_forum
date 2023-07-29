@@ -4,6 +4,9 @@ from django.urls import reverse
 from django.views.generic import CreateView, DetailView
 from accounts.forms import CustomRegisterForm
 from accounts.models import User
+from topics.models import Topics
+
+
 # from topics.models import Topics
 
 
@@ -23,7 +26,7 @@ class RegisterView(CreateView):
         if not next_url:
             next_url = self.request.POST.get('next')
         if not next_url:
-            next_url = reverse('to_do_list:home')
+            next_url = reverse('topics:home')
         return next_url
 
 
@@ -34,6 +37,6 @@ class ProfileView(DetailView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(object_list=None, **kwargs)
-        # publications = Topics.objects.all()
-        # context['publications'] = publications  # .filter(project_id=self.object.pk).distinct()
+        topic = Topics.objects.all()
+        context['publications'] = topic.filter(topic_author=self.object.pk).distinct()
         return context

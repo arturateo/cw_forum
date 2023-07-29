@@ -6,13 +6,16 @@
         <table class="table">
             <tbody>
             {% for topic in topics %}
-                <tr>
-                    <th scope="row">1</th>
-                    <td>{{ topic.discriptions }}</td>
-                    <td>{{ topic.create_date }}</td>
-                    <td>{{ topic.author.username }}</td>
-                    <td>ответов 2</td>
-                </tr>
+                <div class="pt-3 pb-3 bg-body-tertiary border-top border-bottom">
+                    <a class="d-flex justify-content-around text-black link-underline link-underline-opacity-0"
+                       href="{% url 'topics:detail' topic.pk %}">
+                        <div>{{ forloop.counter }}</div>
+                        <div>{{ topic.summary }}</div>
+                        <div>{{ topic.create_date }}</div>
+                        <div>{{ topic.author.username }}</div>
+                        <div>ответов 2</div>
+                    </a>
+                </div>
             {% empty %}
                 <span>Создайте тему</span>
             {% endfor %}

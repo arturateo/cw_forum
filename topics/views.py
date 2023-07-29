@@ -3,11 +3,10 @@ from urllib.parse import urlencode
 from django.shortcuts import redirect
 from django.views.generic import CreateView, ListView, DetailView
 
-# from comments.models import Comments
-# from topics.forms.publications_form import PublicationsForm
 from topics.forms.search_form import SearchForm
+from topics.forms.topics_form import TopicsForm
 from topics.models import Topics
-from django.urls import reverse, reverse_lazy
+from django.urls import reverse
 
 
 # Create your views here.
@@ -43,3 +42,26 @@ class TopicsList(ListView):
         # if self.search_value:
         #     queryset = queryset.filter(author__icontains=self.search_value)
         return queryset
+
+
+class TopicCreate(CreateView):
+    model = Topics
+    form_class = TopicsForm
+    template_name = 'topics/topic_create.html'
+
+    def form_valid(self, form):
+        topic = form.save(commit=False)
+        topic.author = self.request.user
+        topic.save()
+        return redirect("topics:home")
+        # , pk=project.pk)
+
+    def get_success_url(self):
+        return reverse("topics:home")
+        # , kwargs={"pk": self.object.pk})
+
+
+class TopicDetail(DetailView):
+    model = Topics
+    template_name = 'topics/topic_detail.html'
+    context_object_name = 'topic'
