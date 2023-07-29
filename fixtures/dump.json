@@ -1,0 +1,385 @@
+[
+{
+  "model": "comments.comments",
+  "pk": 1,
+  "fields": {
+    "comment_author": 1,
+    "topic": 13,
+    "summary": "123431244444444444",
+    "create_date": "2023-07-29T10:21:06.417Z",
+    "update_date": "2023-07-29T12:16:23.591Z"
+  }
+},
+{
+  "model": "comments.comments",
+  "pk": 2,
+  "fields": {
+    "comment_author": 1,
+    "topic": 13,
+    "summary": "1324",
+    "create_date": "2023-07-29T10:28:03.899Z",
+    "update_date": "2023-07-29T10:28:03.899Z"
+  }
+},
+{
+  "model": "comments.comments",
+  "pk": 3,
+  "fields": {
+    "comment_author": 1,
+    "topic": 13,
+    "summary": "asdasdasd",
+    "create_date": "2023-07-29T10:28:11.654Z",
+    "update_date": "2023-07-29T10:28:11.654Z"
+  }
+},
+{
+  "model": "comments.comments",
+  "pk": 5,
+  "fields": {
+    "comment_author": 1,
+    "topic": 13,
+    "summary": "123123",
+    "create_date": "2023-07-29T10:46:55.310Z",
+    "update_date": "2023-07-29T10:46:55.310Z"
+  }
+},
+{
+  "model": "comments.comments",
+  "pk": 6,
+  "fields": {
+    "comment_author": 2,
+    "topic": 13,
+    "summary": "23123123",
+    "create_date": "2023-07-29T10:47:28.164Z",
+    "update_date": "2023-07-29T10:47:28.164Z"
+  }
+},
+{
+  "model": "comments.comments",
+  "pk": 7,
+  "fields": {
+    "comment_author": 2,
+    "topic": 13,
+    "summary": "asdasdasdasdasdasda",
+    "create_date": "2023-07-29T10:48:56.397Z",
+    "update_date": "2023-07-29T10:48:56.397Z"
+  }
+},
+{
+  "model": "comments.comments",
+  "pk": 8,
+  "fields": {
+    "comment_author": 2,
+    "topic": 13,
+    "summary": "asdasdasdasвфывфв",
+    "create_date": "2023-07-29T10:48:58.612Z",
+    "update_date": "2023-07-29T12:20:28.181Z"
+  }
+},
+{
+  "model": "comments.comments",
+  "pk": 10,
+  "fields": {
+    "comment_author": 1,
+    "topic": 12,
+    "summary": "123123",
+    "create_date": "2023-07-29T11:29:47.362Z",
+    "update_date": "2023-07-29T11:29:47.362Z"
+  }
+},
+{
+  "model": "comments.comments",
+  "pk": 11,
+  "fields": {
+    "comment_author": 1,
+    "topic": 13,
+    "summary": "asdasd",
+    "create_date": "2023-07-29T11:31:31.548Z",
+    "update_date": "2023-07-29T11:31:31.548Z"
+  }
+},
+{
+  "model": "comments.comments",
+  "pk": 12,
+  "fields": {
+    "comment_author": 1,
+    "topic": 13,
+    "summary": "123",
+    "create_date": "2023-07-29T11:33:10.258Z",
+    "update_date": "2023-07-29T11:33:10.258Z"
+  }
+},
+{
+  "model": "comments.comments",
+  "pk": 13,
+  "fields": {
+    "comment_author": 1,
+    "topic": 14,
+    "summary": "фвфывфывфыв",
+    "create_date": "2023-07-29T11:54:00.658Z",
+    "update_date": "2023-07-29T11:54:00.658Z"
+  }
+},
+{
+  "model": "comments.comments",
+  "pk": 16,
+  "fields": {
+    "comment_author": 2,
+    "topic": 14,
+    "summary": "asdasd",
+    "create_date": "2023-07-29T12:27:46.014Z",
+    "update_date": "2023-07-29T12:27:46.014Z"
+  }
+},
+{
+  "model": "comments.comments",
+  "pk": 17,
+  "fields": {
+    "comment_author": 4,
+    "topic": 17,
+    "summary": "123123",
+    "create_date": "2023-07-29T12:28:51.527Z",
+    "update_date": "2023-07-29T12:28:51.528Z"
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$SBzbjljkMNouXUOGP2uD08$Rc1jdlN5ryALNsD8aYtMA9CBRZdFZm4AxRPA1kLSr0Y=",
+    "last_login": "2023-07-29T12:28:10.752Z",
+    "is_superuser": false,
+    "username": "user1",
+    "first_name": "Artur",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-07-29T07:02:54.544Z",
+    "avatar": "avatar/4caa18be-baa4-4900-a616-686213af23c7.png",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$AeHkQCvrVxzGBzk8SQYGj8$GSXMeKbxxN8imbDLz5WrgHiaHZRa2Nzdg5So+0Nqhrs=",
+    "last_login": "2023-07-29T12:29:03.508Z",
+    "is_superuser": false,
+    "username": "user2",
+    "first_name": "Oleg",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-07-29T10:47:19.733Z",
+    "avatar": "avatar/image-rectangle_600_x.jpg",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$4xvI981V9xKDSPJyrE8NJD$i2OuhqvZZE4ilAn3+ukHe0CgmGe8Z5nXSSXxq6OUiJQ=",
+    "last_login": "2023-07-29T11:34:08.869Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-07-29T11:34:03.828Z",
+    "avatar": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$xAanTQYmVxFG5HFLxoX4da$uAvmjhTt9FeUABmOAJovvDcq1Ih6dbb8eL+a6udGj7Y=",
+    "last_login": "2023-07-29T12:28:38.609Z",
+    "is_superuser": false,
+    "username": "moderator",
+    "first_name": "moderator",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-07-29T11:35:03Z",
+    "avatar": "avatar/1680197788_kartinki-pibig-info-p-kartinki-krasivie-raznie-neobichnie-so-smi-1.jpg",
+    "groups": [
+      1
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$qlludF3TrHlT2iwxGn088e$6M7YJSvluCYKkvWFIOq1/6QyS69l20r3uvgj7mSUdTo=",
+    "last_login": "2023-07-29T12:01:53.818Z",
+    "is_superuser": false,
+    "username": "user3",
+    "first_name": "User3",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-07-29T12:01:36.587Z",
+    "avatar": "avatar/Superposition_Benchmark_v1.1_2874_1669924906.png",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "topics.topics",
+  "pk": 3,
+  "fields": {
+    "author": 1,
+    "summary": "Тема №1",
+    "description": "Описание темы №1",
+    "create_date": "2023-07-29T08:40:18.413Z",
+    "update_date": "2023-07-29T08:40:18.413Z"
+  }
+},
+{
+  "model": "topics.topics",
+  "pk": 4,
+  "fields": {
+    "author": 1,
+    "summary": "Тема №2",
+    "description": "Описание темы №2",
+    "create_date": "2023-07-29T08:46:19.684Z",
+    "update_date": "2023-07-29T08:46:19.684Z"
+  }
+},
+{
+  "model": "topics.topics",
+  "pk": 5,
+  "fields": {
+    "author": 1,
+    "summary": "Тема №3",
+    "description": "Описание темы №3",
+    "create_date": "2023-07-29T08:46:29.314Z",
+    "update_date": "2023-07-29T08:46:29.314Z"
+  }
+},
+{
+  "model": "topics.topics",
+  "pk": 6,
+  "fields": {
+    "author": 1,
+    "summary": "Тема №4",
+    "description": "Описание темы №4",
+    "create_date": "2023-07-29T08:46:36.625Z",
+    "update_date": "2023-07-29T08:46:36.625Z"
+  }
+},
+{
+  "model": "topics.topics",
+  "pk": 7,
+  "fields": {
+    "author": 1,
+    "summary": "Тема №5",
+    "description": "Описание темы №5",
+    "create_date": "2023-07-29T08:46:45.979Z",
+    "update_date": "2023-07-29T08:46:45.979Z"
+  }
+},
+{
+  "model": "topics.topics",
+  "pk": 8,
+  "fields": {
+    "author": 1,
+    "summary": "Тема №6",
+    "description": "Описание темы №6",
+    "create_date": "2023-07-29T08:46:54.796Z",
+    "update_date": "2023-07-29T08:46:54.796Z"
+  }
+},
+{
+  "model": "topics.topics",
+  "pk": 9,
+  "fields": {
+    "author": 1,
+    "summary": "Тема №7",
+    "description": "Описание темы №7",
+    "create_date": "2023-07-29T08:47:10.963Z",
+    "update_date": "2023-07-29T08:47:10.963Z"
+  }
+},
+{
+  "model": "topics.topics",
+  "pk": 10,
+  "fields": {
+    "author": 1,
+    "summary": "Тема №8",
+    "description": "Описание темы №8",
+    "create_date": "2023-07-29T08:47:16.872Z",
+    "update_date": "2023-07-29T08:47:16.872Z"
+  }
+},
+{
+  "model": "topics.topics",
+  "pk": 11,
+  "fields": {
+    "author": 1,
+    "summary": "Тема №9",
+    "description": "Описание темы №9",
+    "create_date": "2023-07-29T08:47:23.396Z",
+    "update_date": "2023-07-29T08:47:23.396Z"
+  }
+},
+{
+  "model": "topics.topics",
+  "pk": 12,
+  "fields": {
+    "author": 1,
+    "summary": "Тема №10",
+    "description": "Описание темы №10",
+    "create_date": "2023-07-29T08:47:31.320Z",
+    "update_date": "2023-07-29T08:47:31.320Z"
+  }
+},
+{
+  "model": "topics.topics",
+  "pk": 13,
+  "fields": {
+    "author": 1,
+    "summary": "Тема №11",
+    "description": "Описание темы №11",
+    "create_date": "2023-07-29T08:47:41.768Z",
+    "update_date": "2023-07-29T08:47:41.768Z"
+  }
+},
+{
+  "model": "topics.topics",
+  "pk": 14,
+  "fields": {
+    "author": 1,
+    "summary": "12312313123123asdasdasd",
+    "description": "123123",
+    "create_date": "2023-07-29T09:54:05.063Z",
+    "update_date": "2023-07-29T11:49:51.057Z"
+  }
+},
+{
+  "model": "topics.topics",
+  "pk": 17,
+  "fields": {
+    "author": 2,
+    "summary": "asdasdasdasd",
+    "description": "asdasdas",
+    "create_date": "2023-07-29T12:27:09.322Z",
+    "update_date": "2023-07-29T12:27:37.911Z"
+  }
+}
+]
