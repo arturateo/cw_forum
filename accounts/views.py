@@ -1,4 +1,5 @@
-from django.contrib.auth import login
+from django.contrib.auth import login, get_user_model
+from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views.generic import CreateView, DetailView
@@ -32,11 +33,16 @@ class RegisterView(CreateView):
 
 class ProfileView(DetailView):
     template_name = 'accounts/profile.html'
-    queryset = User.objects.all()
+    model = User
     context_object_name = 'profile_user'
+    paginate_related_by = 10
 
-    def get_context_data(self, *, object_list=None, **kwargs):
-        context = super().get_context_data(object_list=None, **kwargs)
-        topic = Topics.objects.all()
-        context['publications'] = topic.filter(topic_author=self.object.pk).distinct()
-        return context
+    def get_context_data(self, **kwargs):
+        topics = self.object.author.order_by('-create_date')
+        paginator = Paginator(topics, self.paginate_related_by)
+        page_number = self.request.GET.get('page', 1)
+        page = paginator.get_page(page_number)
+        kwargs['page_obj'] = page
+        kwargs['topics'] = page.object_list
+        kwargs['is_paginated'] = page.has_other_pages()
+        return super().get_context_data(**kwargs)

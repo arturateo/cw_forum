@@ -8,10 +8,47 @@
             <div>{{ topic.create_date }}</div>
             <div>{{ topic.author.username }}</div>
         </div>
-        <div class="card">
+        <div class="mt-2 card">
             <div class="card-body">
-                <p class="card-text">{{ topic.discriptions }}</p>
+                <p class="card-text">{{ topic.description }}</p>
             </div>
         </div>
+
+        <div class="mt-2 card">
+            <div class="card-body">
+                {% include 'partials/form.html' with fields_only=True button_text="Создать" topic_pk=topic.pk %}
+            </div>
+        </div>
+
+        {% for comment in comments %}
+            {% if comment.topic.id == topic.pk %}
+                <div class="mt-3 d-flex flex-start">
+                    <img class="rounded-circle shadow-1-strong me-3"
+                         src="{{ comment.comment_author.avatar.url }}" alt="avatar" width="65"
+                         height="65"/>
+                    <div class="flex-grow-1 flex-shrink-1">
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="mb-1">
+                                    <a href="{% url 'accounts:profile' comment.comment_author.pk %}">
+                                        {{ comment.comment_author.username }}
+                                        (ответов: {{ comment.comment_author.get_total_comment }})</a>
+                                    <span class="small">- {{ comment.create_date }}</span>
+                                </p>
+                            </div>
+                            <p class="small mb-0">
+                                {{ comment.summary }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            {% endif %}
+        {% empty %}
+            <span>Создайте комментарий</span>
+        {% endfor %}
+        {% if is_paginated %}
+            {% include 'partials/pagination.html' %}
+        {% endif %}
     </div>
 {% endblock %}

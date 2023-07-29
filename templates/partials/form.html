@@ -1,4 +1,8 @@
+{% if not fields_only %}
 <form action="" method="POST" enctype="multipart/form-data">
+{% else %}
+<form action="{% url 'comments:create' topic_pk %}" method="POST" enctype="multipart/form-data">
+{% endif %}
     {% csrf_token %}
     {% for field in form %}
         <div class="mb-3">

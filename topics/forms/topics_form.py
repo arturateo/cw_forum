@@ -5,7 +5,7 @@ from topics.models import Topics
 class TopicsForm(forms.ModelForm):
     class Meta:
         model = Topics
-        fields = ['summary', 'discriptions']
+        fields = ['summary', 'description']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

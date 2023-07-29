@@ -4,22 +4,22 @@
     <h2 class="text-center mt-2">Темы</h2>
     <div class="container mt-3">
         <table class="table">
-            <tbody>
             {% for topic in topics %}
                 <div class="pt-3 pb-3 bg-body-tertiary border-top border-bottom">
                     <a class="d-flex justify-content-around text-black link-underline link-underline-opacity-0"
                        href="{% url 'topics:detail' topic.pk %}">
-                        <div>{{ forloop.counter }}</div>
                         <div>{{ topic.summary }}</div>
                         <div>{{ topic.create_date }}</div>
                         <div>{{ topic.author.username }}</div>
-                        <div>ответов 2</div>
+                        <div>ответов {{ topic.get_total_comment }}</div>
                     </a>
                 </div>
             {% empty %}
                 <span>Создайте тему</span>
             {% endfor %}
-            </tbody>
+            {% if is_paginated %}
+                {% include 'partials/pagination.html' %}
+            {% endif %}
         </table>
     </div>
 {% endblock %}
