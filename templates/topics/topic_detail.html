@@ -11,6 +11,8 @@
         <div class="mt-2 card">
             <div class="card-body">
                 <p class="card-text">{{ topic.description }}</p>
+                <a href="{% url 'topics:update' topic.id %}" class="btn btn-primary">Изменить тему</a>
+                <a href="{% url 'topics:delete' topic.id %}" class="btn btn-danger">Удалить</a>
             </div>
         </div>
 
@@ -41,6 +43,8 @@
                             </p>
                         </div>
                     </div>
+                    <a href="{% url 'comments:update' comment.id %}" class="btn btn-primary">Изменить комментарий</a>
+                    <a href="{% url 'comments:delete' comment.id %}" class="btn btn-danger">Удалить</a>
                 </div>
 
             {% endif %}

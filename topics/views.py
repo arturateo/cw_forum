@@ -3,12 +3,12 @@ from urllib.parse import urlencode
 from django.core.paginator import Paginator
 from django.db.models import Q
 from django.shortcuts import redirect
-from django.views.generic import CreateView, ListView, DetailView
+from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
 from comments.forms import CreateCommentForm
 from topics.forms.search_form import SearchForm
 from topics.forms.topics_form import TopicsForm
 from topics.models import Topics
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 
 
 # Create your views here.
@@ -62,6 +62,22 @@ class TopicCreate(CreateView):
 
     def get_success_url(self):
         return reverse("topics:detail", kwargs={"pk": self.object.pk})
+
+
+class TopicUpdate(UpdateView):
+    model = Topics
+    form_class = TopicsForm
+    template_name = "topics/topic_edit.html"
+
+    def get_success_url(self):
+        return reverse("topics:detail", kwargs={"pk": self.object.pk})
+
+
+class TopicDelete(DeleteView):
+    model = Topics
+    template_name = "topics/topic_delete.html"
+    context_object_name = 'topic'
+    success_url = reverse_lazy("topics:home")
 
 
 class TopicDetail(DetailView):

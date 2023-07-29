@@ -14,7 +14,6 @@ class CustomUserCreationForm(UserCreationForm):
             self.fields[field].widget.attrs.update({
                 'class': 'form-control'
             })
-        self.fields['email'].required = True
 
 
 class CustomRegisterForm(UserCreationForm):
