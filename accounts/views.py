@@ -4,7 +4,7 @@ from django.urls import reverse
 from django.views.generic import CreateView, DetailView
 from accounts.forms import CustomRegisterForm
 from accounts.models import User
-from publications.models import Publications
+# from topics.models import Topics
 
 
 # Create your views here.
@@ -34,6 +34,6 @@ class ProfileView(DetailView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(object_list=None, **kwargs)
-        publications = Publications.objects.all()
-        context['publications'] = publications  # .filter(project_id=self.object.pk).distinct()
+        # publications = Topics.objects.all()
+        # context['publications'] = publications  # .filter(project_id=self.object.pk).distinct()
         return context
