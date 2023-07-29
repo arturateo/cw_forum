@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Главная{% endblock %}
+{% block content %}
+    <h2 class="text-center mt-2">Темы</h2>
+    <div class="container mt-3">
+        <table class="table">
+            <tbody>
+            {% for topic in topics %}
+                <tr>
+                    <th scope="row">1</th>
+                    <td>{{ topic.discriptions }}</td>
+                    <td>{{ topic.create_date }}</td>
+                    <td>{{ topic.author.username }}</td>
+                    <td>ответов 2</td>
+                </tr>
+            {% empty %}
+                <span>Создайте тему</span>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

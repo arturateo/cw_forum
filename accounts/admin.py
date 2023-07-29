@@ -13,7 +13,7 @@ class CustomUserAdmin(UserAdmin):
             'Other Personal info',
             {
                 'fields': (
-                    'avatar'
+                    'avatar',
                 )
             }
         )
@@ -26,7 +26,6 @@ class CustomUserAdmin(UserAdmin):
                 'fields': (
                     'first_name',
                     'last_name',
-                    'email',
                     'is_staff',
                     'avatar',
                 )
