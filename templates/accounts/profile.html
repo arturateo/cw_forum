@@ -30,7 +30,7 @@
                         <div>{{ topic.summary }}</div>
                         <div>{{ topic.create_date }}</div>
                         <div>{{ topic.author.username }}</div>
-                        <div>ответов 2</div>
+                        <div>ответов {{ topic.get_total_comment }} </div>
                     </a>
                 </div>
             {% empty %}

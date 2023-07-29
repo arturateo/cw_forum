@@ -4,16 +4,11 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views.generic import CreateView, DetailView
 from accounts.forms import CustomRegisterForm
-from accounts.models import User
-from topics.models import Topics
-
-
-# from topics.models import Topics
 
 
 # Create your views here.
 class RegisterView(CreateView):
-    model = User
+    model = get_user_model()
     template_name = 'accounts/register.html'
     form_class = CustomRegisterForm
 
@@ -33,7 +28,7 @@ class RegisterView(CreateView):
 
 class ProfileView(DetailView):
     template_name = 'accounts/profile.html'
-    model = User
+    model = get_user_model()
     context_object_name = 'profile_user'
     paginate_related_by = 10
 
